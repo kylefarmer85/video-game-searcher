@@ -7,7 +7,6 @@ const Nav = () => {
     color: 'white'
   }
 
-
   return (
     <nav>
       <ul className='nav-links'>

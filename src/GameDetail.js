@@ -13,7 +13,6 @@ const GameDetail = ({match}) => {
     setLoading(false)
   }, [])
 
-  
 
   return (
     <div className="game-details">
@@ -21,14 +20,17 @@ const GameDetail = ({match}) => {
       <h1>{game.name}</h1>
       <p>Released: {game.released}</p>
       <p>Platform(s):</p>
-      { 
-      loading ? <div>...loading</div> : game.platforms.map(p => <span>{`${p.platform.name} | ` }</span>)
-      }
+
+        { 
+        loading ? <div>...loading</div> : game.platforms.map(p => <span>{`${p.platform.name} | ` }</span>)
+        }
+
       <br></br>
       <img src={game.background_image} alt='game'/>
       <br></br>
       <img src= {game.background_image_additional} alt='game'/>
-      <p id="details">{ ReactHtmlParser(game.description) }</p>
+
+      <p id="details">{ ReactHtmlParser(game. description) }</p>
     </div>
   );
 }

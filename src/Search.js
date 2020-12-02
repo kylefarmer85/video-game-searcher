@@ -4,7 +4,7 @@ import Results from './Results'
 const Search = () => {
 
   const [searchTerm, setSearchTerm] = useState("")
-  
+
   const [gameResults, setGameResults] = useState([])
 
   const handleChange = (e) => {
@@ -14,6 +14,7 @@ const Search = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     let slug = searchTerm.split(' ').join('-').toLowerCase()
+
     setGameResults([])
     fetch(`https://rawg.io/api/games?search=${slug}`)
       .then(resp => resp.json())
