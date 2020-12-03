@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
 
@@ -11,7 +11,7 @@ const Nav = () => {
     <nav>
       <ul className='nav-links'>
         <Link style={navStyle} to={'/topgames'}>
-        <li>Top Games</li>
+        <li>Top Rated Games</li>
         </Link>
         <Link style={navStyle} to={'/search'}>
         <li>Search</li>
@@ -22,3 +22,5 @@ const Nav = () => {
 }
 
 export default Nav;
+
+

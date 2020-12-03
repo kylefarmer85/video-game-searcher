@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Results = (props) => {
 
@@ -29,3 +29,5 @@ const Results = (props) => {
 }
 
 export default Results;
+
+

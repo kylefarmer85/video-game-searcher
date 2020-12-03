@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Results from './Results'
+import Results from './Results';
 
 const Search = () => {
 
   const [searchTerm, setSearchTerm] = useState("")
-
   const [gameResults, setGameResults] = useState([])
 
   const handleChange = (e) => {
@@ -38,3 +37,5 @@ const Search = () => {
 }
 
 export default Search;
+
+
