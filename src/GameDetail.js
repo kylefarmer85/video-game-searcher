@@ -1,36 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import ReactHtmlParser from 'react-html-parser';
 
-const GameDetail = ({match}) => {
+const GameDetail = (props) => {
 
-  const [game, setGame] = useState({})
-  const [loading, setLoading] = useState(true)
-
-  useEffect( async () => {
-    const response = await fetch(`https://rawg.io/api/games/${match.params.id}`)
-    const data = await response.json()
-    setGame(data)
-    setLoading(false)
-  }, [])
-
-
+  const { game } = props.location.gameProps
+  
   return (
-    <div className="game-details">
+    <div>
      
       <h1>{game.name}</h1>
       <p>Released: {game.released}</p>
-      <p>Platform(s):</p>
-
+      <p>Rating: {game.rating}</p>
+      
+      <h3>Genre(s):</h3>
         { 
-        loading ? <div>...loading</div> : game.platforms.map(p => <span>{`${p.platform.name} | ` }</span>)
+          game.genres.map(g => `${g.name} | `)
         }
 
-      <br></br>
-      <img src={game.background_image} alt='game'/>
-      <br></br>
-      <img src= {game.background_image_additional} alt='game'/>
-
-      <p id="details">{ ReactHtmlParser(game. description) }</p>
+      <h3>Platform(s):</h3>
+        { 
+          game.platforms.map(p => `${p.platform.name} | `)
+        }
+        
+      <ul className="game-ul">
+        {
+          game.short_screenshots.map(ss => <li><img src={ss.image} alt='game'></img></li>)
+        }
+      </ul>
     </div>
   );
 }
