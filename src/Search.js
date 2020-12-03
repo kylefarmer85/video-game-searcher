@@ -16,10 +16,10 @@ const Search = () => {
 
     setGameResults([])
     fetch(`https://rawg.io/api/games?search=${slug}`)
-      .then(resp => resp.json())
-      .then(({results}) => {
-        results === undefined ? alert('no games found') : setGameResults(results)
-      })
+    .then(resp => resp.json())
+    .then(({results}) => {
+      results === undefined ? alert('no games found') : setGameResults(results)
+    })
     setSearchTerm("")
   }
 
@@ -37,5 +37,6 @@ const Search = () => {
 }
 
 export default Search;
+
 
 

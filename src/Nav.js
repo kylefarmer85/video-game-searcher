@@ -11,7 +11,7 @@ const Nav = () => {
     <nav>
       <ul className='nav-links'>
         <Link style={navStyle} to={'/topgames'}>
-        <li>Top Rated Games</li>
+        <li>Top Games</li>
         </Link>
         <Link style={navStyle} to={'/search'}>
         <li>Search</li>

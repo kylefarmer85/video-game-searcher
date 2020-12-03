@@ -1,7 +1,7 @@
 const GameDetail = (props) => {
 
   const { game } = props.location.gameProps
-  console.log(props)
+
   return (
     <div>
       <h1>{game.name}</h1>
